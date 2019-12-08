@@ -24,5 +24,10 @@ public class Main {
         System.out.println("Amount(private field without constructors and setters): " + field.get(hobby));
         field.set(hobby, 12);
         System.out.println("Amount(private field without constructors and setters) after change: " + field.get(hobby));
+        field = hobbyClass.getDeclaredField("some");
+        field.setAccessible(true);
+        System.out.println(field.get(hobby));
+        field.set(hobby, 22);
+        System.out.println(field.get(hobby));
     }
 }
